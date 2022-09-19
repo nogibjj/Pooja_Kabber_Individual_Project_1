@@ -14,3 +14,5 @@ jupyter
 s3fs
 bokeh
 streamlit
+spark-nlp
+kaggle
