@@ -3,7 +3,7 @@
 
 ## Architecture Diagram
 
-This project uses PySpark, SparkNLP, Databricks and Github Codespaces to extract topics from financial news from Kaggle.
+This project uses PySpark, SparkNLP, Databricks and Github Codespaces to extract topics from approximately 1.4M financial news titles from Kaggle.
 
 ![databricks (4)](https://user-images.githubusercontent.com/112586823/191080189-694285cc-cc96-439c-9bf7-313a58806685.jpg)
 
@@ -22,6 +22,18 @@ Example:
 Text: `Microsoft is one of the biggest tech companies listed with Nasdaq.` 
 
 Results: `["Microsoft", "tech", "companies", "Nasdaq"]`
+
+## Steps Taken to Setup Databricks Cluster
+1. Create and start cluster
+2. Under 'Libraries' tab, install two libraries
+    ```spark-nlp``` using PyPI
+    ```com.johnsnowlabs.nlp:spark-nlp_2.12:4.1.0``` using Maven
+3. Create a new notebook and attach to cluster
+4. Run ```$pip install kaggle```
+5. Place ```kaggle.json``` in ```/root/.kaggle```
+6. Download dataset using ```$kaggle download datasets -d miguelaenlle/massive-stock-news-analysis-db-for-nlpbacktests```
+7. Move file to ```/dbfs/FileStore```
+8. Unzip file using ```$unzip massive-stock-news-analysis-db-for-nlpbacktests.zip```
 
 ## Steps Taken to Setup Codespaces
 1. Install same python version as on cluster
